@@ -6,9 +6,15 @@ const employees = [
         //... More employee records can be added here
     ];
 
-// Function to display all employess
-const totalEmployees = employees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`).join('');
-    document.getElementById('employeeDetails').innerHTML = totalEmployees;
+ // Function to create an all employees string
+ const totalEmployees = employees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`).join('');
+ 
+ // Function to display all employees
+ function displayEmployees(){
+    document.getElementById('employeesDetails').innerHTML = totalEmployees;
+ }
+ 
+
 
 /*
 // Function to display all employees
@@ -41,7 +47,7 @@ Each employee's salary (employee.salary) is added to the accumulator (acc). Afte
 // Function to display employees details based on department
 function displayHREmployees() {
     const hrEmployees = employees.filter(employee => employee.department === 'HR');
-    const hrEmployeesDisplay = hrEmployees.map((employee, index) => '<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary}</p>').join('');
+    const hrEmployeesDisplay = hrEmployees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`).join('');
     document.getElementById('employeesDetails').innerHTML = hrEmployeesDisplay;
 }
 /*
